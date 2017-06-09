@@ -1,5 +1,10 @@
 # dotfiles
-use zsh
+zsh 
+vim 
+macos conf
+bash
+
+
 ```
 pip install dotfiles
 git clone https://github.com/wangzewang/dotfiles.git ~/Dotfiles
