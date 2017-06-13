@@ -46,6 +46,7 @@ def get_wallpaper():
 
 if __name__ == '__main__':
     os.system('rm -rf ~/.wallpaper/download_*')
+    os.system('rm -rf ~/.wallpaper/Iterm2*')
     pic_name = "download_pic_"+str(datetime.datetime.now().strftime('%m-%d-%H-%M-%S'))
     wallpaper = get_wallpaper()
     if wallpaper:
@@ -54,6 +55,7 @@ if __name__ == '__main__':
         wallpaper = get_wallpaper()
     os.system('/usr/local/bin/wget %s -O ~/.wallpaper/%s.jpg' % (wallpaper, pic_name))
     set_wallpaper(pic_name)
+    os.system('cp %s.jpg ~/Dotfiles/wallpaper/Iterm2_bg.jpg')
     # res = os.popen('/usr/local/bin/wallpaper').readlines()
 
 
