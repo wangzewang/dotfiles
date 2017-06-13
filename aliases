@@ -17,6 +17,11 @@ alias p="cd ~/Workspace/prophet; workon prophet"
 alias g="git"
 alias h="history"
 alias j="jobs"
+alias psqlstart="brew services start postgresql"
+alias psqlstop="brew services stop postgresql"
+alias mysqlstart="sudo /usr/local/mysql/support-files/mysql.server start"
+alias mysqlstop="sudo /usr/local/mysql/support-files/mysql.server stop"
+
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -149,7 +154,6 @@ command -v grunt > /dev/null && alias grunt="grunt --stack"
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
-alias pumpitup="osascript -e 'set volume output volume 100'"
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description

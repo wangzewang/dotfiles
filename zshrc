@@ -25,6 +25,7 @@ ZSH_THEME="dracula"
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
+unset MAILCHECK
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
