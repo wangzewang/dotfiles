@@ -55,7 +55,7 @@ if __name__ == '__main__':
         wallpaper = get_wallpaper()
     os.system('/usr/local/bin/wget %s -O ~/.wallpaper/%s.jpg' % (wallpaper, pic_name))
     set_wallpaper(pic_name)
-    os.system('cp %s.jpg ~/Dotfiles/wallpaper/Iterm2_bg.jpg')
+    os.system('cp ~/Dotfiles/wallpaper/%s.jpg ~/Dotfiles/wallpaper/Iterm2_bg.jpg' % pic_name)
     # res = os.popen('/usr/local/bin/wallpaper').readlines()
 
 

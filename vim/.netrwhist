@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/wangzewang'
 let g:netrw_dirhist_2='/Users/wangzewang/Dotfiles/wallpaper'
 let g:netrw_dirhist_3='/Users/wangzewang/WorkSpace/prophet/base/migrations'
+let g:netrw_dirhist_4='/Users/wangzewang/WorkSpace'
+let g:netrw_dirhist_5='/Users/wangzewang'
+let g:netrw_dirhist_6='/Users'
