@@ -1,9 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/wangzewang/.oh-my-zsh
-
+export PATH="/usr/local/sbin:$PATH"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -57,7 +56,7 @@ source $HOME/.aliases
 source $HOME/.functions
 
 
-plugins=(git extract z web-search)
+plugins=(git extract z web-search zsh-atuosuggestions colored-man)
 
 source $ZSH/oh-my-zsh.sh
 # User configuration
@@ -88,6 +87,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 export VIRTUALENV_USE_DISTRIBUTE=1
 export WORKON_HOME=$HOME/.local/virtualenvs
 if [ -e $HOME/.local/bin/virtualenvwrapper.sh ];then
@@ -98,4 +98,15 @@ else if [ -e /usr/local/bin/virtualenvwrapper.sh ];then
 fi
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
+
 source /Users/wangzewang/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+
+if [ -f ~/.config/exercism/exercism_completion.zsh ]; then
+  . ~/.config/exercism/exercism_completion.zsh
+fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+eval $(thefuck --alias)

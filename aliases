@@ -13,24 +13,29 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias w="cd ~/Workspace"
 alias b="cd ~/Workspace/braavos; workon braavos"
+alias dafa="cd ~/Workspace/dafa_system; workon dafa"
 alias pr="cd ~/Workspace/prophet; workon prophet"
 alias p="python"
 alias changewallpaper="python ~/.wallpaper/wallpaper.py"
 alias g="git"
 alias h="history"
 alias j="jobs"
-alias vmup="vagrant up"
-alias vmssh="vagrant ssh"
+alias vmup="cd ~/vm_box;vagrant up"
+alias vmssh="cd ~/vm_box;vagrant ssh"
+alias vmhalt="cd ~/vm_box;vagrant halt"
 alias psqlstart="brew services start postgresql"
 alias psqlstop="brew services stop postgresql"
 alias mysqlstart="sudo /usr/local/mysql/support-files/mysql.server start"
 alias mysqlstop="sudo /usr/local/mysql/support-files/mysql.server stop"
 alias we="cd ~/Workspace/testProject/wechatbot; workon wechatbot"
 alias sshw="ssh wangzewang@portal;123456"
-alias npm="npm --registry=https://registry.npm.taobao.org \
+alias sshaws="ssh -i '~/Downloads/aws_pem/aws-server.pem' ubuntu@ec2-52-15-62-52.us-east-2.compute.amazonaws.com"
+alias sshv="ssh root@108.61.126.218"
+alias cnpm="npm --registry=https://registry.npm.taobao.org \
 --cache=$HOME/.npm/.cache/cnpm \
 --disturl=https://npm.taobao.org/dist \
 --userconfig=$HOME/.cnpmrc"
+
 
 
 # Detect which `ls` flavor is in use
