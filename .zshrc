@@ -2,32 +2,38 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/wangzewang/.oh-my-zsh
+export ZSH="/Users/wangzewang/.oh-my-zsh"
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -48,19 +54,23 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-git
-kubectl
+  git
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -82,9 +92,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -93,37 +100,23 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export GOPATH=$HOME/go
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 source ~/.functions
 source ~/.aliases
 source /Users/wangzewang/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
-#export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087;
-#export http_proxy=;export https_proxy=;
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/wangzewang/VirtualBox/Workspace/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/wangzewang/VirtualBox/Workspace/google-cloud-sdk/path.zsh.inc'; fi # The next line enables shell command completion for gcloud.  
-
-if [ -f '/Users/wangzewang/VirtualBox/Workspace/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/wangzewang/VirtualBox/Workspace/google-cloud-sdk/completion.zsh.inc'; fi 
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/wangzewang/VirtualBox/Workspace/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/wangzewang/VirtualBox/Workspace/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/wangzewang/VirtualBox/Workspace/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/wangzewang/VirtualBox/Workspace/google-cloud-sdk/completion.zsh.inc'; fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-
-
-# ---- start kubeconfig -----
-#minikube=~/.kube/config
-hongkong=~/.kube/hongkong_k8s_conf
-shanghai=~/.kube/shanghai
-export KUBECONFIG=$KUBECONFIG:$hongkong
-# ---- end   kubeconfig -----
-
 export TERM=xterm-256color
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/wangzewang/.google-cloud-sdk/path.zsh.inc' ]; then . '/Users/wangzewang/.google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/wangzewang/.google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/wangzewang/.google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export OS_OUTPUT_GOPATH=1
