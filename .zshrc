@@ -1,3 +1,4 @@
+if [ "$TMUX" = "" ]; then tmux; fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -68,9 +69,11 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 plugins=(
   git
   zsh-autosuggestions
+  zsh-proxy
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -119,4 +122,5 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+export GOBIN=$HOME/go/bin
 export OS_OUTPUT_GOPATH=1
