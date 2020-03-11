@@ -253,6 +253,9 @@ augroup autoformat_settings
 "  autocmd FileType python AutoFormatBuffer yapf
 augroup END
 
+"" go syntax
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 
 "" Initialize plugin system
 call plug#end()
@@ -270,7 +273,8 @@ colorscheme zenburn
 
 set number
 set cursorline
-hi cursorline cterm=bold
+hi CursorLine   cterm=underline ctermbg=52 ctermfg=NONE
+" hi cursorline cterm=bold
 set laststatus=2
 
 "" After exiting vim, the content is displayed on the terminal screen
