@@ -1,9 +1,9 @@
-if [ "$TMUX" = "" ]; then tmux; fi
+#if [ "$TMUX" = "" ]; then tmux; fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/wangzewang/.oh-my-zsh"
+export ZSH="/Users/lumen/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -73,7 +73,6 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 plugins=(
   git
   zsh-autosuggestions
-  zsh-proxy
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -108,19 +107,20 @@ export LANG=en_US.UTF-8
 
 source ~/.functions
 source ~/.aliases
-source /Users/wangzewang/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export TERM=xterm-256color
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/wangzewang/.google-cloud-sdk/path.zsh.inc' ]; then . '/Users/wangzewang/.google-cloud-sdk/path.zsh.inc'; fi
+export RBENV_ROOT=/usr/local/var/rbenv
+eval "$(rbenv init -)"
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/wangzewang/.google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/wangzewang/.google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/gettext/bin:$PATH"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export GOBIN=$HOME/go/bin
 export OS_OUTPUT_GOPATH=1
+export GO111MODULE=on
+export GOPROXY=https://goproxy.cn
