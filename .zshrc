@@ -73,6 +73,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 plugins=(
   git
   zsh-autosuggestions
+  wakatime
 )
 
 source $ZSH/oh-my-zsh.sh

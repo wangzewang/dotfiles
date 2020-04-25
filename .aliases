@@ -20,6 +20,7 @@ alias w="cd ~/VirtualBox/Workspace"
 alias vim="v"
 # pipenv not compatiable with vim-tmux-navigator
 alias prn="pipenv run nvim"
+alias genpasswd="openssl rand -base64"
 
 alias python=/usr/local/bin/python3.7
 alias pip=/usr/local/bin/pip3

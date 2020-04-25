@@ -59,6 +59,8 @@ else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
+let g:coc_snippet_next = '<tab>'
+
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
@@ -113,6 +115,9 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 
+"" wakatime
+Plug 'wakatime/vim-wakatime'
+
 "" vim tmux
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -137,7 +142,7 @@ let NERDTreeWinSize = 36
 set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*
 "let NERDTreeRespectWildIgnore=1
 let g:NERDTreeGitStatusWithFlags = 1
-"set guifont=Hack_Nerd_Font:h11
+set guifont=Hack_Nerd_Font:h11
 
 " open NERDTree automatically
 autocmd StdinReadPre * let s:std_in=1
@@ -181,13 +186,19 @@ Plug 'tpope/vim-fugitive'
 Plug 'jnurmine/Zenburn'
 
 "" vim airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme="angr"
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#whitespace#enabled = 0
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+"let g:airline_theme="angr"
+"let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#buffer_nr_show = 1
+"let g:airline#extensions#whitespace#enabled = 0
+"
+"Plug 'itchyny/lightline.vim'
+"set noshowmode
+"let g:lightline = {
+"      \ 'colorscheme': 'seoul256',
+"      \ }
 
 "" indent line
 Plug 'Yggdroot/indentLine'
@@ -196,7 +207,7 @@ Plug 'Yggdroot/indentLine'
 "" tagbar
 Plug 'majutsushi/tagbar'
 map tb :Tagbar<cr>
-let g:tagbar_ctags_bin = 'ctags'
+"let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 let g:tagbar_width = 26
 let g:tagbar_left= 1
 
@@ -214,6 +225,16 @@ let g:tagbar_type_typescript = {
   \ ]
 \ }
 
+let g:tagbar_type_go = {
+    \ 'ctagstype': 'go',
+    \ 'kinds' : [
+        \'p:package',
+        \'f:function',
+        \'v:variables',
+        \'t:type',
+        \'c:const'
+    \]
+\}
 
 "" Gist
 Plug 'mattn/webapi-vim'
@@ -312,7 +333,7 @@ set hlsearch
 set incsearch
 hi IncSearch cterm=NONE ctermfg=NONE ctermbg=darkgrey
 hi Search cterm=NONE ctermfg=NONE ctermbg=darkgrey
-:nnoremap <CR> :nohlsearch<CR><CR>
+:nnoremap <leader><CR> :nohlsearch<CR><CR>
 :nnoremap <leader><leader> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 
 "" highlight ExtraWhitespace
