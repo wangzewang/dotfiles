@@ -8,7 +8,7 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 alias active_env="cd ~/venv; pipenv shell;"
-alias work="cd ~/ML_Work/;jupyter lab"
+
 # Shortcuts
 alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
@@ -21,7 +21,6 @@ alias vim="v"
 # pipenv not compatiable with vim-tmux-navigator
 alias prn="pipenv run nvim"
 alias genpasswd="openssl rand -base64"
-
 alias python=/usr/local/bin/python3.7
 alias pip=/usr/local/bin/pip3
 alias venv="source ~/venv/bin/activate"
@@ -30,12 +29,9 @@ alias venv="source ~/venv/bin/activate"
 alias tms="tmux new -s"
 alias tma="tmux attach -t"
 alias tml="tmux list-sessions"
-
 alias dev="tma dev || tms dev"
 
-#alias vmup="cd ~/VirtualBox; vagrant up"
-#alias dev="cd ~/VirtualBox; vagrant ssh"
-#alias vmhalt="cd ~/VirtualBox; vagrant halt"
+
 alias gpom="git push origin master"
 alias ping="prettyping"
 
