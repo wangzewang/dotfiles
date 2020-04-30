@@ -34,8 +34,7 @@ backup() {
       info "-------------------------------"
       info "Copy ${mapping[${key}]} to $key"
       # make sure dir exists
-      echo "$(dirname \"${key}\")"
-      mkdir -p $(dirname \"${key}\")
+      mkdir -p $(dirname ${key})
       cp ${mapping[${key}]} $DOTFILES_ROOT/$key
   done
   info "-------------------------------"
