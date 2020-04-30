@@ -62,7 +62,8 @@ v
 ```
 
 ### 9. Others
-
+config in iTerm2<br>
+![image](https://user-images.githubusercontent.com/16834522/80665402-fc0e2100-8acb-11ea-8689-0631b463a31f.png)
 
 ## Usage
 
@@ -78,8 +79,9 @@ v
 |```tb```| tagbar in vim|
 |```gd```| go to defination in vim| 
 |```control```+```p```| file search in vim|
-|```command```+```[```or ```]```| buffer switch in vim, need to config in iTerm2![image](https://user-images.githubusercontent.com/16834522/80665402-fc0e2100-8acb-11ea-8689-0631b463a31f.png)
-|```command```+```/```| comment in vim, also need to config in iTerm2.|
+|```command```+```[```or ```]```| buffer switch in vim |
+|```command```+```/```| comment in vim|
+|etc||
 
 
 
