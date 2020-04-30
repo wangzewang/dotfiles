@@ -62,10 +62,28 @@ v
 ```
 
 ### 9. Others
-```
-todo
-```
+
 
 ## Usage
 
-TODO
+| short key | Description |
+| --- | ----------- |
+| ```dev``` | open a new tmux session.Automatic restore your last dev when exec |
+|```control + w + \|``` or ```control + w + ——``` | split the window |
+|```control + w ``` with ```h```,```j```,```k```,```l``` | change the pane size in tmux|
+|```control + w ``` with ```<```or ```>```| switch window in tmux|
+|```Escape``` then ```v``` then ```h```,```j```,```k```,```l``` then ```y``` | copy in tmux|
+|```control``` with ```h```,```j```,```k```,```l```| select pane in tmux or vim |
+|```tr```| nerdtree in vim|
+|```tb```| tagbar in vim|
+|```gd```| go to defination in vim| 
+|```control```+```p```| file search in vim|
+|```command```+```[```or ```]```| buffer switch in vim, need to config in iTerm2![image](https://user-images.githubusercontent.com/16834522/80665402-fc0e2100-8acb-11ea-8689-0631b463a31f.png)
+|```command```+```/```| comment in vim, also need to config in iTerm2.|
+
+
+
+
+
+
+
