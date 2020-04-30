@@ -34,8 +34,8 @@ install_dotfiles () {
       info "-------------------------------"
       info "Copy $key to ${mapping[${key}]}"
       # make sure dir exists
-      mkdir $(dirname "${mapping[${key}]}")
-      copy $key ${mapping[${key}]}
+      mkdir -p $(dirname \"${mapping[${key}]}\")
+      cp $DOTFILES_ROOT/$key ${mapping[${key}]}
   done
   info "-------------------------------"
   info "Installing dotfiles finished"

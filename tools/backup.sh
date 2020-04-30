@@ -32,10 +32,11 @@ backup() {
   for key in ${!mapping[@]}
   do
       info "-------------------------------"
-      info "Copy ${mapping[${key}]} to ${mapping[${key}]}"
+      info "Copy ${mapping[${key}]} to $key"
       # make sure dir exists
-      mkdir $(dirname "${key}")
-      copy ${mapping[${key}]} $key
+      echo "$(dirname \"${key}\")"
+      mkdir -p $(dirname \"${key}\")
+      cp ${mapping[${key}]} $DOTFILES_ROOT/$key
   done
   info "-------------------------------"
   info "Backup dotfiles finished"
