@@ -19,6 +19,7 @@ brew "binwalk"
 brew "cifer"
 brew "coreutils"
 brew "ctags", link: false
+brew "dep"
 brew "dex2jar"
 brew "dns2tcp"
 brew "fcrackzip"

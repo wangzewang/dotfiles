@@ -29,6 +29,11 @@ fail () {
 
 backup() {
   info 'Backup dotfiles begin'
+  info "-------------------------------"
+  info 'Backup brew'
+
+  rm -f Brewfile
+  brew bundle dump
   for key in ${!mapping[@]}
   do
       info "-------------------------------"
