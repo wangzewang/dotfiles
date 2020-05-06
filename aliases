@@ -22,8 +22,9 @@ alias vim="v"
 alias prn="pipenv run nvim"
 alias genpasswd="openssl rand -base64"
 
-alias python=/usr/local/bin/python3.7
-alias pip=/usr/local/bin/pip3
+alias python=~/.pyenv/versions/3.7.7/bin/python3.7
+alias pip=~/.pyenv/versions/3.7.7/bin/pip3
+
 alias venv="source ~/venv/bin/activate"
 
 # tmux short cut
