@@ -34,6 +34,5 @@ export PATH=$PATH:$GOPATH/bin
 export OS_OUTPUT_GOPATH=1
 export GO111MODULE=on
 export GOPROXY=https://goproxy.cn
-
 # Force me not to use multi tabs
-if [ "$TMUX" = "" ]; then dev; fi
+#if [ "$TMUX" = "" ]; then dev; fi

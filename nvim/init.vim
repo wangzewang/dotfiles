@@ -203,6 +203,8 @@ augroup END
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 
+Plug 'morhetz/gruvbox'
+
 "" Initialize plugin system
 call plug#end()
 
@@ -215,7 +217,10 @@ let mapleader = "\<Space>"
 syntax on
 
 set t_Co=256
-colorscheme zenburn
+"colorscheme
+set background=dark
+"colorscheme zenburn
+colorscheme gruvbox
 
 set number
 set cursorline
