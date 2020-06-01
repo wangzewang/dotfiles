@@ -205,6 +205,10 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'morhetz/gruvbox'
 
+Plug 'voldikss/vim-floaterm'
+nmap <C-t> :FloatermNew<CR>
+
+
 "" Initialize plugin system
 call plug#end()
 
@@ -274,3 +278,5 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t\+\|\t\+\zs \+/
 let g:python3_host_prog = expand('~/.pyenv/versions/3.7.7/bin/python3.7')
 "" python2 support
 let g:python_host_prog = expand('~/.pyenv/versions/2.7.16/bin/python2.7')
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
