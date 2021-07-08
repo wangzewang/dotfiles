@@ -41,7 +41,7 @@ function! s:check_back_space() abort
 endfunction
 
 "" wakatime
-Plug 'wakatime/vim-wakatime'
+""Plug 'wakatime/vim-wakatime'
 
 "" vim tmux
 Plug 'christoomey/vim-tmux-navigator'
@@ -111,13 +111,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'jnurmine/Zenburn'
 
 "" vim airline
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-"let g:airline_theme="angr"
-"let g:airline_powerline_fonts = 1
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#buffer_nr_show = 1
-"let g:airline#extensions#whitespace#enabled = 0
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme="angr"
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#whitespace#enabled = 0
 "
 "Plug 'itchyny/lightline.vim'
 "set noshowmode

@@ -6,8 +6,6 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 plugins=(
   git
-  zsh-autosuggestions
-  wakatime
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -36,3 +34,13 @@ export GO111MODULE=on
 export GOPROXY=https://goproxy.cn
 # Force me not to use multi tabs
 #if [ "$TMUX" = "" ]; then dev; fi
+export HTTP_PROXY=http://127.0.0.1:7890
+export HTTPS_PROXY=http://127.0.0.1:7890
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+
+eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
