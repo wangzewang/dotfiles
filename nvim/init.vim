@@ -108,7 +108,7 @@ Plug 'tpope/vim-fugitive'
 
 
 "" Color Schema
-Plug 'jnurmine/Zenburn'
+"" Plug 'jnurmine/Zenburn'
 
 "" vim airline
 Plug 'vim-airline/vim-airline'
@@ -130,9 +130,9 @@ Plug 'Yggdroot/indentLine'
 
 
 "" tagbar
-Plug 'majutsushi/tagbar'
+Plug 'preservim/tagbar'
 map tb :Tagbar<cr>
-"let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+"" let g:tagbar_#ctags_bin = '/usr/local/bin/ctags'
 let g:tagbar_width = 26
 let g:tagbar_left= 1
 
@@ -150,16 +150,17 @@ let g:tagbar_type_typescript = {
   \ ]
 \ }
 
-let g:tagbar_type_go = {
-    \ 'ctagstype': 'go',
-    \ 'kinds' : [
-        \'p:package',
-        \'f:function',
-        \'v:variables',
-        \'t:type',
-        \'c:const'
-    \]
-\}
+
+"" let g:tagbar_type_go = {
+""     \ 'ctagstype': 'go',
+""     \ 'kinds' : [
+""         \'p:package',
+""         \'f:function',
+""         \'v:variables',
+""         \'t:type',
+""         \'c:const'
+""     \]
+"" \}
 
 "" Gist
 Plug 'mattn/webapi-vim'
@@ -186,7 +187,7 @@ Plug 'google/vim-searchindex'
 Plug 'google/vim-glaive'
 Plug 'google/vim-syncopate'
 augroup autoformat_settings
-  autocmd FileType python AutoFormatBuffer autopep8
+"  autocmd FileType python AutoFormatBuffer autopep8
   autocmd FileType go AutoFormatBuffer gofmt
   autocmd FileType c,cpp,proto,java,javascript AutoFormatBuffer clang-format
   autocmd FileType rust AutoFormatBuffer rustfmt
@@ -196,7 +197,7 @@ augroup autoformat_settings
 "  autocmd FileType bzl AutoFormatBuffer buildifier
 "  autocmd FileType dart AutoFormatBuffer dartfmt
 "  autocmd FileType gn AutoFormatBuffer gn
-"  autocmd FileType python AutoFormatBuffer yapf
+  autocmd FileType python AutoFormatBuffer yapf
 augroup END
 
 "" go syntax
