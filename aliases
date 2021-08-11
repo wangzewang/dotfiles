@@ -7,23 +7,27 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
-alias active_env="cd ~/venv; pipenv shell;"
-alias work="cd ~/ML_Work/;jupyter lab"
+#alias active_env="cd ~/venv; pipenv shell;"
+#alias work="cd ~/ML_Work/;jupyter lab"
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
+#alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 alias g="git"
 alias gs="git status"
-alias w="cd ~/VirtualBox/Workspace"
-alias vim="v"
+#alias w="cd ~/VirtualBox/Workspace"
+alias vim="nvim"
 # pipenv not compatiable with vim-tmux-navigator
 alias prn="pipenv run nvim"
 alias genpasswd="openssl rand -base64"
+alias cat="bat"
+alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 
 alias python=~/.pyenv/versions/3.7.7/bin/python3.7
 alias pip=~/.pyenv/versions/3.7.7/bin/pip3
+alias pip2=~/.pyenv/versions/2.7.16/bin/pip
+alias python2=~/.pyenv/versions/2.7.16/bin/python2.7
 
 alias venv="source ~/venv/bin/activate"
 
@@ -116,7 +120,7 @@ jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources
 unset jscbin;
 
 # Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
+alias c="tr -d '\n' | xclip"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"

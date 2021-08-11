@@ -10,9 +10,12 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-"coc.nvim
+"" coc.nvim
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"#########################################################################
+" coc.nvim  config start
+"#########################################################################
 autocmd FileType json syntax match Comment +\/\/.\+$+
 " if hidden is not set, TextEdit might fail.
 set hidden
@@ -39,9 +42,12 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+"#########################################################################
+" coc.nvim  config end
+"#########################################################################
 
 "" wakatime
-""Plug 'wakatime/vim-wakatime'
+Plug 'wakatime/vim-wakatime'
 
 "" vim tmux
 Plug 'christoomey/vim-tmux-navigator'
@@ -49,8 +55,13 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 set clipboard+=unnamedplus
 
 "" vim buffer switch
+
 ""   add Command+[ shortkey to Iterm2 key binding
 ""   add Command+] shortkey to Iterm2 key binding
+
+"" alacritty config
+"" - { key: LBracket, mods: Alt, chars: "((" }
+"" - { key: RBracket, mods: Alt, chars: "))" }
 nnoremap (( :bp<CR>
 nnoremap )) :bn<CR>
 
@@ -59,6 +70,7 @@ nnoremap )) :bn<CR>
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
+
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 map tr :NERDTreeToggle<cr>
@@ -67,7 +79,9 @@ let NERDTreeWinSize = 36
 set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*
 "let NERDTreeRespectWildIgnore=1
 let g:NERDTreeGitStatusWithFlags = 1
-set guifont=Hack_Nerd_Font:h11
+"set guifont=Droid\ Sans\ Mono:h12
+"set guifont=Hack-Regular:h11
+"set guifont=Droid\ Sans\ Mono\ Nerd\ Font:h11
 
 " open NERDTree automatically
 autocmd StdinReadPre * let s:std_in=1
@@ -97,6 +111,8 @@ autocmd BufEnter * call SyncTree()
 "" comment
 Plug 'scrooloose/nerdcommenter'
 ""   add Command+/ shortkey to Iterm2 key binding
+"" alacritty config
+"" - { key: Slash, mods: Alt, chars: "++" }
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
@@ -118,12 +134,6 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#whitespace#enabled = 0
-"
-"Plug 'itchyny/lightline.vim'
-"set noshowmode
-"let g:lightline = {
-"      \ 'colorscheme': 'seoul256',
-"      \ }
 
 "" indent line
 Plug 'Yggdroot/indentLine'
@@ -150,25 +160,12 @@ let g:tagbar_type_typescript = {
   \ ]
 \ }
 
-
-"" let g:tagbar_type_go = {
-""     \ 'ctagstype': 'go',
-""     \ 'kinds' : [
-""         \'p:package',
-""         \'f:function',
-""         \'v:variables',
-""         \'t:type',
-""         \'c:const'
-""     \]
-"" \}
-
 "" Gist
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 
-
 ""
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
@@ -187,21 +184,19 @@ Plug 'google/vim-searchindex'
 Plug 'google/vim-glaive'
 Plug 'google/vim-syncopate'
 augroup autoformat_settings
-"  autocmd FileType python AutoFormatBuffer autopep8
   autocmd FileType go AutoFormatBuffer gofmt
   autocmd FileType c,cpp,proto,java,javascript AutoFormatBuffer clang-format
   autocmd FileType rust AutoFormatBuffer rustfmt
   autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
   autocmd FileType vue AutoFormatBuffer prettier
-"  autocmd FileType java AutoFormatBuffer google-java-format
-"  autocmd FileType bzl AutoFormatBuffer buildifier
-"  autocmd FileType dart AutoFormatBuffer dartfmt
-"  autocmd FileType gn AutoFormatBuffer gn
   autocmd FileType python AutoFormatBuffer yapf
 augroup END
 
 "" go syntax
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+"" rust syntax
+"Plug 'rust-lang/rust.vim'
 
 
 Plug 'morhetz/gruvbox'
@@ -226,6 +221,7 @@ set t_Co=256
 set background=dark
 "colorscheme zenburn
 colorscheme gruvbox
+"hi Normal guibg=NONE ctermbg=NONE
 
 set number
 set cursorline
@@ -281,3 +277,5 @@ let g:python3_host_prog = expand('~/.pyenv/versions/3.7.7/bin/python3.7')
 let g:python_host_prog = expand('~/.pyenv/versions/2.7.16/bin/python2.7')
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
+
+cmap w!! w !sudo tee > /dev/null %
