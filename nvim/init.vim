@@ -279,3 +279,4 @@ highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
 cmap w!! w !sudo tee > /dev/null %
+nnoremap Y y$

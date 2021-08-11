@@ -7,5 +7,8 @@ declare -A mapping=(
 ["zshrc"]="$HOME/.zshrc"
 ["nvim/init.vim"]="$HOME/.config/nvim/init.vim"
 ["nvim/coc-settings.json"]="$HOME/.config/nvim/coc-settings.json"
+["alacritty/alacritty.yml"]="$HOME/.config/alacritty/alacritty.yml"
+["efm-langserver/config.yaml"]="$HOME/.config/efm-langserver/config.yaml"
+["bat/config"]="$HOME/.config/bat/config"
 )
 
