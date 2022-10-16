@@ -23,9 +23,14 @@ alias prn="pipenv run nvim"
 alias genpasswd="openssl rand -base64"
 alias cat="bat"
 alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+alias ssh-kyndryl-agent="tmuxinator start kyndryl-agent"
+alias ssh-ibm-agent="tmuxinator start ibm-agent"
+alias ssh-k8s="tmuxinator start k8s-server"
+alias dedockify="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm mrhavens/dedockify"
 
-alias python=~/.pyenv/versions/3.7.7/bin/python3.7
-alias pip=~/.pyenv/versions/3.7.7/bin/pip3
+
+#alias python=~/.pyenv/versions/3.7.7/bin/python3.7
+#alias pip=~/.pyenv/versions/3.7.7/bin/pip3
 alias pip2=~/.pyenv/versions/2.7.16/bin/pip
 alias python2=~/.pyenv/versions/2.7.16/bin/python2.7
 
@@ -37,6 +42,12 @@ alias tma="tmux attach -t"
 alias tml="tmux list-sessions"
 
 alias dev="tma dev || tms dev"
+
+# export docker entrypoint
+alias runlike="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock assaflavie/runlike"
+# export docker image to dockerfile
+alias whaler="docker run -t --rm -v /var/run/docker.sock:/var/run/docker.sock:ro pegleg/whaler"
+
 
 #alias vmup="cd ~/VirtualBox; vagrant up"
 #alias dev="cd ~/VirtualBox; vagrant ssh"
@@ -120,7 +131,7 @@ jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources
 unset jscbin;
 
 # Trim new lines and copy to clipboard
-alias c="tr -d '\n' | xclip"
+alias c="tr -d '\n' | pbcopy"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
@@ -185,3 +196,5 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+export PNPM_HOME="/Users/wangzewang/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"

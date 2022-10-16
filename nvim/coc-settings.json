@@ -56,7 +56,7 @@
         "efm": {
             "command": "efm-langserver",
             "args": ["-c", "/home/zw/.config/efm-langserver/config.yaml"],
-            "filetypes": ["vim", "eruby", "markdown", "yaml, csv, lua, makefile"]
+            "filetypes": ["eruby", "yaml, csv, lua, makefile"]
         }
     }
 }

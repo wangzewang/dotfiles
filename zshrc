@@ -1,11 +1,14 @@
+# Fig pre block. Keep at the top of this file.
+#[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 export ZSH="/$HOME/.oh-my-zsh"
 
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="spaceship"
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 plugins=(
   git
+  autojump
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -14,48 +17,54 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 #source ~/.dockerfunc
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 #export TERM=xterm-256color
 
 # Ruby conf
-export RBENV_ROOT=/usr/local/var/rbenv
-eval "$(rbenv init -)"
-export PATH="/usr/local/sbin:$PATH"
+#export RBENV_ROOT=/usr/local/var/rbenv
+#eval "$(rbenv init -)"
 
 # Go conf
-export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export GOBIN=$HOME/go/bin
 export OS_OUTPUT_GOPATH=1
-export GO111MODULE=on
+#export GO111MODULE=on
 export GOPROXY=https://goproxy.cn
-# Go bin
+
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+#[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# PATH
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
-
-#proxy
-export HTTP_PROXY=http://127.0.0.1:7890
-export HTTPS_PROXY=http://127.0.0.1:7890
-
+# Haskell bin
+export PATH="/home/zw/.local/bin:$PATH"
 # Python pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
-eval "$(pyenv init -)"
 # pyenv python3.7.7 bin
-export PATH="/home/zw/.pyenv/versions/3.7.7/bin/:$PATH"
+export PATH="$HOME/.pyenv/versions/3.9.10/bin:$PATH"
+# krew bin
+export PATH="${PATH}:${HOME}/.krew/bin"
 
-# Haskell bin
-export PATH="/home/zw/.local/bin:$PATH"
+export PATH="/Users/wangzewang/.nvm/versions/node/v16.15.1/bin:$PATH"
 
+eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 
 # Swap CapsLock with esacpe
-setxkbmap -option "caps:swapescape"
+#setxkbmap -option "caps:swapescape"
 
 # Sync primary clipboard & selection clipboard
-autocutsel -fork -selection CLIPBOARD && autocutsel -fork -selection PRIMARY
+#autocutsel -fork -selection CLIPBOARD && autocutsel -fork -selection PRIMARY
 
 # Force me not to use multi tabs
 #if [ "$TMUX" = "" ]; then dev; fi
@@ -63,3 +72,21 @@ autocutsel -fork -selection CLIPBOARD && autocutsel -fork -selection PRIMARY
 #neofetch
 source ~/.functions
 source ~/.aliases
+#eval "$(starship init zsh)"
+source <(kubectl completion zsh)
+#source /usr/local/ibmcloud/autocomplete/zsh_autocomplete
+
+autoload -U promptinit; promptinit
+prompt pure
+
+export EDITOR='nvim'
+eval "$(zoxide init zsh)"
+
+#proxy
+#export HTTP_PROXY=http://127.0.0.1:7890
+#export HTTPS_PROXY=http://127.0.0.1:7890
+
+# pnpm
+#export PNPM_HOME="/Users/wangzewang/Library/pnpm"
+#export PATH="$PNPM_HOME:$PATH"
+# pnpm end

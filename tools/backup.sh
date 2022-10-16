@@ -32,8 +32,8 @@ backup() {
   info "-------------------------------"
   info 'Backup brew'
 
-  #rm -f Brewfile
-  #brew bundle dump
+  rm -f Brewfile
+  brew bundle dump
   for key in ${!mapping[@]}
   do
       info "-------------------------------"

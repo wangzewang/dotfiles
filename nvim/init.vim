@@ -10,9 +10,9 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-
 "" coc.nvim
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 "#########################################################################
 " coc.nvim  config start
 "#########################################################################
@@ -146,19 +146,19 @@ map tb :Tagbar<cr>
 let g:tagbar_width = 26
 let g:tagbar_left= 1
 
-let g:tagbar_type_typescript = {
-  \ 'ctagstype': 'typescript',
-  \ 'kinds': [
-    \ 'c:classes',
-    \ 'n:modules',
-    \ 'f:functions',
-    \ 'v:variables',
-    \ 'v:varlambdas',
-    \ 'm:members',
-    \ 'i:interfaces',
-    \ 'e:enums',
-  \ ]
-\ }
+"let g:tagbar_type_typescript = {
+  "\ 'ctagstype': 'typescript',
+  "\ 'kinds': [
+    "\ 'c:classes',
+    "\ 'n:modules',
+    "\ 'f:functions',
+    "\ 'v:variables',
+    "\ 'v:varlambdas',
+    "\ 'm:members',
+    "\ 'i:interfaces',
+    "\ 'e:enums',
+  "\ ]
+"\ }
 
 "" Gist
 Plug 'mattn/webapi-vim'
@@ -204,6 +204,12 @@ Plug 'morhetz/gruvbox'
 Plug 'voldikss/vim-floaterm'
 nmap <C-t> :FloatermNew<CR>
 
+Plug 'rizzatti/dash.vim'
+nmap <C-d> :FloatermNew<CR>
+
+
+"" AI pair programmer
+"Plug 'github/copilot.vim'
 
 "" Initialize plugin system
 call plug#end()
@@ -225,7 +231,9 @@ colorscheme gruvbox
 
 set number
 set cursorline
-hi CursorLine   cterm=underline ctermbg=52 ctermfg=NONE
+"hi CursorLine   cterm=underline ctermbg=52 ctermfg=NONE
+au ColorScheme * hi Normal ctermbg=none guibg=none
+
 " hi cursorline cterm=bold
 set laststatus=2
 
@@ -280,3 +288,9 @@ call matchadd('ColorColumn', '\%81v', 100)
 
 cmap w!! w !sudo tee > /dev/null %
 nnoremap Y y$
+
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave *.* mkview 1
+  autocmd BufWinEnter *.* silent! loadview 1
+augroup END
