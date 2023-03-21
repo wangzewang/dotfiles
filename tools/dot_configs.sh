@@ -7,7 +7,6 @@ declare -A mapping=(
 ["nvim/coc-settings.json"]="$HOME/.config/nvim/coc-settings.json"
 ["alacritty/alacritty.yml"]="$HOME/.config/alacritty/alacritty.yml"
 ["efm-langserver/config.yaml"]="$HOME/.config/efm-langserver/config.yaml"
-["bat/config"]="$HOME/.config/bat/config"
 ["clash/start_clash.sh"]="$HOME/.config/clash/start_clash.sh"
 )
 

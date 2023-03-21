@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-#[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 export ZSH="/$HOME/.oh-my-zsh"
 
 #ZSH_THEME="spaceship"
@@ -9,6 +7,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 plugins=(
   git
   autojump
+  wakatime
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -32,7 +31,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export GOPATH=$HOME/go
 export GOBIN=$HOME/go/bin
 export OS_OUTPUT_GOPATH=1
-#export GO111MODULE=on
+export GO111MODULE=on
 export GOPROXY=https://goproxy.cn
 
 #export NVM_DIR="$HOME/.nvm"
@@ -56,7 +55,7 @@ export PATH="${PATH}:${HOME}/.krew/bin"
 export PATH="/Users/wangzewang/.nvm/versions/node/v16.15.1/bin:$PATH"
 
 eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
+#eval "$(pyenv virtualenv-init -)"
 export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 
@@ -90,3 +89,5 @@ eval "$(zoxide init zsh)"
 #export PNPM_HOME="/Users/wangzewang/Library/pnpm"
 #export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+export PATH="/Users/wangzewang/.nvm/versions/node/v16.15.1/bin:$PATH"
+
